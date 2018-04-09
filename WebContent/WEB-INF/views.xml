@@ -4,6 +4,8 @@
     xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
     
-
+	<!-- EHF faktura -->
+    <bean id="efakturaListExcelView" class="no.systema.efaktura.view.EfakturaListExcelBuilder" />
+    
      
 </beans>
