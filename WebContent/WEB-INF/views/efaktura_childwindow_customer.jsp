@@ -30,18 +30,18 @@
 					<td>
 						<table>
 						<tr>
-							<td class="text11">&nbsp;Kundenr.</td>
-							<td class="text11">&nbsp;<input type="text" class="inputText" name="sokknr" id="sokknr" size="8" maxlength="8" value="${model.container.sokknr}"></td>
+							<td class="text14">&nbsp;Kundenr.</td>
+							<td class="text14">&nbsp;<input type="text" class="inputText" name="sokknr" id="sokknr" size="8" maxlength="8" value="${model.container.sokknr}"></td>
 						
-							<td class="text11">&nbsp;&nbsp;&nbsp;Navn</td>
-							<td class="text11">&nbsp;<input type="text" class="inputText" name="soknvn" id="soknvn" size="15" maxlength="35" value="${model.container.soknvn}"></td>
+							<td class="text14">&nbsp;&nbsp;&nbsp;Navn</td>
+							<td class="text14">&nbsp;<input type="text" class="inputText" name="soknvn" id="soknvn" size="15" maxlength="35" value="${model.container.soknvn}"></td>
 						
 							<%--
-							<td class="text11">&nbsp;&nbsp;&nbsp;Postnr/Postadresse/Land</td>
-							<td class="text11">&nbsp;<input type="text" class="inputText" name="kunpnsted" id="kunpnsted" size="15" maxlength="10" value="${model.container.kunpnsted}"></td>
+							<td class="text14">&nbsp;&nbsp;&nbsp;Postnr/Postadresse/Land</td>
+							<td class="text14">&nbsp;<input type="text" class="inputText" name="kunpnsted" id="kunpnsted" size="15" maxlength="10" value="${model.container.kunpnsted}"></td>
 							 --%>
 							 
-							<td class="text11">&nbsp;</td>
+							<td class="text14">&nbsp;</td>
 	           				<td align="right">&nbsp;<input class="inputFormSubmit" type="submit" name="submit" value='Søk'>
 		           		</tr>
 		           		
@@ -78,11 +78,11 @@
 					<%-- this is the datatables grid (content)--%>
 					<table id="customerList" class="display compact cell-border" width="100%">
 						<thead>
-						<tr style="background-color:#EEEEEE">
-						    <th class="text11">&nbsp;Kundenr</th>   
-		                    <th class="text11">&nbsp;Navn</th>
-		                    <th class="text11">&nbsp;Adresse</th>
-		                    <th class="text11">&nbsp;Postnr./Postadresse/Land</th>
+						<tr class="tableHeaderField">
+						    <th class="text14">&nbsp;Kundenr</th>   
+		                    <th class="text14">&nbsp;Navn</th>
+		                    <th class="text14">&nbsp;Adresse</th>
+		                    <th class="text14">&nbsp;Postnr./Postadresse/Land</th>
 		                    
 		                </tr> 
 		                </thead>
@@ -91,16 +91,16 @@
 		                <c:forEach var="record" items="${model.customerList}" varStatus="counter">    
 			               <c:choose>           
 			                   <c:when test="${counter.count%2==0}">
-			                       <tr class="text11" >
+			                       <tr class="text14" >
 			                   </c:when>
 			                   <c:otherwise>   
-			                       <tr class="text11" >
+			                       <tr class="text14" >
 			                   </c:otherwise>
 			               </c:choose>
-			               <td class="text11MediumBlue" id="kundnr_${record.kundnr}@navn_${record.navn}@counter_${counter.count}">&nbsp;${record.kundnr}</td>
-			               <td class="text11">&nbsp;${record.navn}</td>
-			               <td class="text11">&nbsp;${record.adr1}</td>
-			               <td class="text11">&nbsp;${record.adresse}</td>
+			               <td class="text14MediumBlue" id="kundnr_${record.kundnr}@navn_${record.navn}@counter_${counter.count}">&nbsp;${record.kundnr}</td>
+			               <td class="text14">&nbsp;${record.navn}</td>
+			               <td class="text14">&nbsp;${record.adr1}</td>
+			               <td class="text14">&nbsp;${record.adresse}</td>
 			               
 			            </tr> 
 			            </c:forEach>

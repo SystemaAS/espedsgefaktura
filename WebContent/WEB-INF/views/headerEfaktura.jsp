@@ -37,12 +37,12 @@
 	<%--<script type="text/javascript" src="http://cdn.datatables.net/plug-ins/3cfcc339e89/integration/jqueryui/dataTables.jqueryui.js"></script> --%>
 	
 	
-    <table class="noBg" width="1300" border="0" cellspacing="0" cellpadding="0">
+    <table class="noBg" width="100%" border="0" cellspacing="0" cellpadding="0">
 		<%--Banner --%>
 	 	<tr class="clazzTdsBanner" id="tdsBanner" style="visibility:visible">
 	 	 	<%-- class="grayTitanBg" --%>
 		 	<td height="60" class="headerTdsBannerAreaBg" width="100%" align="left" colspan="3"> 
-	    			 <table width="1300" border="0" cellspacing="0" cellpadding="0">
+	    			 <table width="100%" border="0" cellspacing="0" cellpadding="0">
 	    			 	<tr>
 				        	<td>&nbsp;</td>
 				        	<td>&nbsp;</td>
@@ -80,7 +80,7 @@
 							 		<%-- <td class="text12white" width="10%" align=right valign="bottom" >&nbsp;</td>--%>
 						 		</c:otherwise>
 					 		</c:choose>
-					 		<td class="text22Bold" width="80%" align="middle" valign="middle" style="color:#778899;" >
+					 		<td class="text32Bold" width="100%" align="middle" valign="middle" style="color:#778899;" >
 					 			eSped<font style="color:#003300;">sg</font> - <spring:message code="systema.efaktura.title"/>
 					 			
 					 		</td>
@@ -99,10 +99,10 @@
 		</tr>
 		
 		<tr >
-			<td height="23" class="tabThinBorderLightSlateGray" width="100%" align="left" colspan="3"> 
-    			 <table width="1300" border="0" cellspacing="0" cellpadding="0">
+			<td height="23" class="tabThinBorderLightGreenLogoutE2" width="100%" align="left" colspan="3"> 
+    			 <table width="100%" border="0" cellspacing="0" cellpadding="0">
 				 	<tr >
-			    		<td class="text11" width="70%" align="left" >&nbsp;&nbsp;
+			    		<td class="text14" width="70%" align="left" >&nbsp;&nbsp;
 			    			<%-- --------------------------- --%>
 			    			<%-- eFkatura MENU --%>
 			    			<%-- --------------------------- --%>
@@ -120,7 +120,7 @@
 			    				>&nbsp;<spring:message code="systema.efaktura.menu"/>&nbsp;</font>
 			    			</a>
 			    			</td>		      				
-	      				<td class="text11" width="50%" align="right" valign="middle">
+	      				<td class="text14" width="50%" align="right" valign="middle">
 	      					<c:if test="${ empty user.usrLang || user.usrLang == 'NO'}">
 			               		<img src="resources/images/countryFlags/Flag_NO.gif" height="12" border="0" alt="country">
 			               	</c:if>
@@ -144,16 +144,16 @@
 						           			<button name="specialInformationButtonClose" class="buttonGrayInsideDivPopup" type="button" onClick="hidePop('specialInformationAdmin');">Close</button> 
 						           		</div>
 						        </span>   		
-			    				<font class="text11User"  >${user.user}&nbsp;</font>${user.usrLang}</font>
+			    				<font class="text14User"  >${user.user}&nbsp;</font>${user.usrLang}</font>
 			    				<font color="#FFFFFF"; style="font-weight: bold;">&nbsp;|&nbsp;&nbsp;</font>
 				    			<a tabindex=-1 href="logout.do">
 				    				<font class="headerMenuGreen"><img src="resources/images/home.gif" border="0">&nbsp;
-				    					<font class="text11User"  ><spring:message code="dashboard.menu.button"/>&nbsp;</font>
+				    					<font class="text14User"  ><spring:message code="dashboard.menu.button"/>&nbsp;</font>
 				    				</font>
 				    			</a>
 				    			<font color="#FFFFFF"; style="font-weight: bold;">&nbsp;&nbsp;|&nbsp;</font>
 				    			<font class="text12LightGreen" style="cursor:pointer;" onClick="showPop('versionInfo');">${user.versionSpring}&nbsp;</font>
-		    				    <div class="text11" style="position: relative;" align="left">
+		    				    <div class="text11" style="position: relative; display:inline;" align="left">
 									<span style="position:absolute; left:5px; top:30px; width:250px" id="versionInfo" class="popupWithInputText"  >	
 				           	
 					           			&nbsp;<b>${user.versionEspedsg}</b>
