@@ -20,10 +20,10 @@
 	<table width="100%"  class="text14" cellspacing="0" border="0" cellpadding="0">
 		<tr height="2"><td></td></tr>
 		<tr height="25"> 
-			<td width="20%" valign="bottom" class="tabDisabled" align="center" nowrap>
+			<td width="20%" valign="bottom" class="tab" align="center" nowrap>
 				<a style="display:block;" href="efaktura_mainlist.do?action=doFind">
 					<img style="vertical-align:middle;" src="resources/images/bulletGreen.png" width="6px" height="6px" border="0" alt="efaktura log">
-					<font class="tabDisabledLink"><spring:message code="systema.efaktura.mainlist.tab"/></font>
+					<font class="tabLink"><spring:message code="systema.efaktura.mainlist.tab"/></font>
 				</a>
 			</td>
 			<%--
