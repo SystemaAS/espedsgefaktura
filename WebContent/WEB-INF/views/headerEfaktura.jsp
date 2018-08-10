@@ -80,7 +80,7 @@
 							 		<%-- <td class="text12white" width="10%" align=right valign="bottom" >&nbsp;</td>--%>
 						 		</c:otherwise>
 					 		</c:choose>
-					 		<td class="text32Bold" width="100%" align="middle" valign="middle" style="color:#778899;" >
+					 		<td class="text32Bold" width="100%" align="center" valign="middle" style="color:#778899;" >
 					 			eSped<font style="color:#003300;">sg</font> - <spring:message code="systema.efaktura.title"/>
 					 			
 					 		</td>
