@@ -84,9 +84,13 @@
 					 			eSped<font style="color:#003300;">sg</font> - <spring:message code="systema.efaktura.title"/>
 					 			
 					 		</td>
-					 		 
-				    		<td class="text12" width="10%" align="center" valign="middle" ><img src="resources/images/systema_logo.png" border="0" width=80px height=50px ></td>
-				      		<%-- <td class="text12white" width="10%" align=right valign="bottom" >&nbsp;</td>--%>
+					 		
+					 		<td class="text14" width="10%" align="center" valign="middle" >
+			 					<c:if test="${not empty user.systemaLogo && (user.systemaLogo=='Y')}">
+				 					<img src="resources/images/systema_logo.png" border="0" width=80px height=50px >
+				 				</c:if>
+				 			</td> 
+				    		
 				        </tr>
 				        <tr>
 				        	<td>&nbsp;</td>
