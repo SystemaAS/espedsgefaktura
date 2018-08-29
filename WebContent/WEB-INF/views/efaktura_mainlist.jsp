@@ -159,6 +159,7 @@
 		                    <th class="text14">M3</th>
 		                    <th class="text14">LM</th>
 		                    <th class="text14">PDF</th>
+		                    <th class="text14">EDI</th>
 		                    <th class="text14">
 		                    	<img onMouseOver="showPop('status_info');" onMouseOut="hidePop('status_info');" width="12px" height="12px" src="resources/images/info3.png" border="0" alt="info">
 		                    	Status
@@ -167,8 +168,8 @@
 										<font class="text14" >
 					           		 	<p>Status</p>
 					           		 	<ul>
-					           		 		<li>"blank"&nbsp;Ikke sendt</li>
-					           				<li><b>A</b>&nbsp;Annet.</li>
+					           		 		<li><b>blank</b>&nbsp;Ikke sendt</li>
+					           		 		<li><b>A</b>&nbsp;Annet.</li>
 					           				<li><b>C</b>&nbsp;Sendt: sendt til mottakspunkt.</li>
 					           				<li><b>E</b>&nbsp;Error: Fejl ved sending.</li>
 					           				<li><b>N</b>&nbsp;Warning: Faktura mangler fakturalinjer.</li>
@@ -222,7 +223,7 @@
 		               				</a>
 		            			</c:if>
 			               </td>
-			               
+			               <td align="center" class="text14MediumBlue" >&nbsp;${record.xkifs}</td>
 			               <td align="center" class="text14MediumBlue" <c:if test="${record.xfst=='E'}">style="color:#D8000C;"</c:if> >
 			               		<c:choose>
 				               		<c:when test="${record.xfst=='E' || record.xfst=='O' || record.xfst=='C' || record.xfst=='A' || record.xfst==' ' }">
