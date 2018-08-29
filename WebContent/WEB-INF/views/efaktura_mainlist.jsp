@@ -41,7 +41,7 @@
 	</td>
 	</tr>
 	<input type="hidden" name="applicationUser" id="applicationUser" value='${user.user}'>
-	
+	<input type="hidden" name="language" id="language" value='${user.usrLang}'>
 	<%-- Validation errors --%>
 	<spring:hasBindErrors name="record"> <%-- name must equal the command object name in the Controller --%>
 	<tr>
@@ -167,11 +167,12 @@
 										<font class="text14" >
 					           		 	<p>Status</p>
 					           		 	<ul>
+					           		 		<li>"blank"&nbsp;Ikke sendt</li>
 					           				<li><b>A</b>&nbsp;Annet.</li>
 					           				<li><b>C</b>&nbsp;Sendt: sendt til mottakspunkt.</li>
 					           				<li><b>E</b>&nbsp;Error: Fejl ved sending.</li>
 					           				<li><b>N</b>&nbsp;Warning: Faktura mangler fakturalinjer.</li>
-					           				<li><b>O</b>&nbsp;OK: Received er OK.</li>
+					           				<li><b>O</b>&nbsp;Received er OK.</li>
 					           				<li><b>S</b>&nbsp;Info: Faktura er kredittert.</li>
 					           				<li><b>T</b>&nbsp;Warning: PDF av faktura er ikke klar.</li>
 					           				<li><b>V</b>&nbsp;Warning: XML-faktura skal ikke sendes pga. partners standardmelding ikke er definert (pkt.5 på meny EDIMNU3).</li>
@@ -181,7 +182,7 @@
 									</span>
 								</div>	
 		                    </th>
-		                    <th class="text14">Omkør.</th>
+		                    <th class="text14">Send ny oppg.</th>
 		                </tr> 
 		                </thead>
 		                
@@ -233,18 +234,6 @@
 									           		<font class="text14" >Error text here...</font>
 												</span>
 											</div>
-										</c:if>
-										<c:if test="${record.xfst=='O'}">
-					               			Received
-										</c:if>
-										<c:if test="${record.xfst=='C'}">
-					               			Sendt
-										</c:if>
-										<c:if test="${record.xfst=='A'}">
-					               			Annet
-										</c:if>
-										<c:if test="${record.xfst==' '}">
-					               			Ikke sendt
 										</c:if>
 				               		</c:when>
 				               		<c:otherwise>
