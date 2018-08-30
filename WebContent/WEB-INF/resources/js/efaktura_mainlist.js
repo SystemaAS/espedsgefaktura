@@ -32,7 +32,10 @@
 	jq('#logRecords').dataTable( {
 	  "jQueryUI": false,
 	  "dom": '<"top"f>t<"bottom"lip><"clear">',
-	  "order": [[ 4, "desc" ]],
+	  "scrollY":     "700px",
+  	  "scrollCollapse":  true,
+  	  "tabIndex": -1,
+  	  "order": [[ 4, "desc" ]],
 	  "lengthMenu": [ 50, 75, 100],
 	  "language": {
    		  "url": getLanguage(lang)

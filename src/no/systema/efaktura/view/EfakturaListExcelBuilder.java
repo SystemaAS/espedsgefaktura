@@ -100,8 +100,11 @@ public class EfakturaListExcelBuilder extends AbstractExcelView {
         header.createCell(14).setCellValue(this.context.getMessage("systema.efaktura.mainlist.label.xpdf.pdf", new Object[0], request.getLocale()));
         header.getCell(14).setCellStyle(style);
         
-        header.createCell(15).setCellValue(this.context.getMessage("systema.efaktura.mainlist.label.xfst.status", new Object[0], request.getLocale()));
+        header.createCell(15).setCellValue(this.context.getMessage("systema.efaktura.mainlist.label.xkifs.xml", new Object[0], request.getLocale()));
         header.getCell(15).setCellStyle(style);
+        		
+        header.createCell(16).setCellValue(this.context.getMessage("systema.efaktura.mainlist.label.xfst.status", new Object[0], request.getLocale()));
+        header.getCell(16).setCellStyle(style);
         
         
         // create data rows
@@ -125,17 +128,19 @@ public class EfakturaListExcelBuilder extends AbstractExcelView {
             aRow.createCell(12).setCellValue(record.getHem3());
             aRow.createCell(13).setCellValue(record.getHelm());
             aRow.createCell(14).setCellValue(record.getXpdf());
+            aRow.createCell(15).setCellValue(record.getXkifs());
+            
             
             if("E".equals(record.getXfst())){
-            	aRow.createCell(15).setCellValue("(E)Error");
+            	aRow.createCell(16).setCellValue("(E)Error");
             }else if("O".equals(record.getXfst())){
-            	aRow.createCell(15).setCellValue("(O)OK");
+            	aRow.createCell(16).setCellValue("(O)OK");
             }else if("C".equals(record.getXfst())){
-            	aRow.createCell(15).setCellValue("(C)Sendt");
+            	aRow.createCell(16).setCellValue("(C)Sendt");
             }else if("A".equals(record.getXfst())){
-            	aRow.createCell(15).setCellValue("(A)Ftp-øverf.");
+            	aRow.createCell(16).setCellValue("(A)Ftp-øverf.");
             }else{
-            	aRow.createCell(15).setCellValue(record.getXfst());
+            	aRow.createCell(16).setCellValue(record.getXfst());
             }
             
             

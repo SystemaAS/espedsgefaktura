@@ -77,23 +77,23 @@
 				<input type="hidden" name="todo" id="todo" value=''>
 				<table id="containerdatatableTable" width="80%" cellspacing="2" align="left">
 				<tr>
-					<td class="text14" title="avd">&nbsp;Avd
+					<td class="text14" title="avd">&nbsp;<spring:message code="systema.efaktura.mainlist.label.avd"/>
 						<%--
 						<a href="javascript:void(0);" onClick="window.open('todo_childwindow_avd.do?action=doInit','avdWin','top=150px,left=300px,height=600px,width=800px,scrollbars=no,status=no,location=no')">
  							<img id="imgAvdSearch" align="bottom" style="cursor:pointer;" src="resources/images/find.png" height="13px" width="13px" border="0" alt="search">
  						</a>
  						 --%>
 					</td>
-					<td class="text14" title="faktnr">&nbsp;Faktnr</td>
-					<td class="text14" title="kundenr">&nbsp;Kundenr
+					<td class="text14" title="faktnr">&nbsp;<spring:message code="systema.efaktura.mainlist.label.xffn.faktnr"/></td>
+					<td class="text14" title="kundenr">&nbsp;<spring:message code="systema.efaktura.mainlist.label.xfkn.kundenr"/>
 						<a href="javascript:void(0);" onClick="window.open('efaktura_childwindow_customer.do?action=doInit&ctype=s','customerWin','top=300px,left=50px,height=800px,width=900px,scrollbars=no,status=no,location=no')">
 							<img id="imgCustomerSearch" align="bottom" style="cursor:pointer;" src="resources/images/find.png" height="13px" width="13px" border="0" alt="search">
 						</a>
 					</td>
-					<td class="text14" title="rfa">&nbsp;Opp.ref</td>
-					<td class="text14" title="from">&nbsp;F.o.m. dato</td>
-					<td class="text14" title="to">&nbsp;T.o.m. dato</td>
-					<td class="text14" title="status">&nbsp;Status</td>
+					<td class="text14" title="rfa">&nbsp;<spring:message code="systema.efaktura.mainlist.label.herfa.agentref"/></td>
+					<td class="text14" title="from">&nbsp;<spring:message code="systema.efaktura.mainlist.label.hesdf.from"/></td>
+					<td class="text14" title="to">&nbsp;<spring:message code="systema.efaktura.mainlist.label.hesdt.to"/></td>
+					<td class="text14" title="status">&nbsp;<spring:message code="systema.efaktura.mainlist.label.xfst.status"/></td>
 					
 				</tr>
 				<tr>	
@@ -140,26 +140,26 @@
 				<td>
 				<table id="containerdatatableTable" width="100%" cellspacing="2" align="left">	
 				<tr>
-					<td class="ownScrollableSubWindowNoBackgroundColor" style="background-color:#F7F7F6; width:100%; height:50em;">
+					<td class="text11">
 					<table id="logRecords" class="display compact cell-border" width="100%" cellspacing="0">
 						<thead>
 						<tr class="tableHeaderField">
-							<th class="text14">Avd/Opp</th>   
-		                    <th class="text14">Faktnr</th>
-		                    <th class="text14">Kundenr</th>
-		                    <th class="text14">Opp.ref.</th>
-		                    <th class="text14">Dato</th>
-		                    <th class="text14">Fra</th>
-		                    <th class="text14">Til</th>
-		                    <th class="text14">Avsender</th>
-		                    <th class="text14">Mottaker</th>
-		                    <th class="text14">PrKD</th>
-		                    <th class="text14">Antall</th>
-		                    <th class="text14">Vekt</th>
-		                    <th class="text14">M3</th>
-		                    <th class="text14">LM</th>
-		                    <th class="text14">PDF</th>
-		                    <th class="text14">XML</th>
+							<th class="text14"><spring:message code="systema.efaktura.mainlist.label.avd"/>/<spring:message code="systema.efaktura.mainlist.label.opd"/></th>   
+		                    <th class="text14"><spring:message code="systema.efaktura.mainlist.label.xffn.faktnr"/></th>
+		                    <th class="text14"><spring:message code="systema.efaktura.mainlist.label.xfkn.kundenr"/></th>
+		                    <th class="text14"><spring:message code="systema.efaktura.mainlist.label.herfa.agentref"/></th>
+		                    <th class="text14"><spring:message code="systema.efaktura.mainlist.label.hedtop.date"/></th>
+		                    <th class="text14"><spring:message code="systema.efaktura.mainlist.label.hesdf.from"/></th>
+		                    <th class="text14"><spring:message code="systema.efaktura.mainlist.label.hesdt.to"/></th>
+		                    <th class="text14"><spring:message code="systema.efaktura.mainlist.label.henas.avs"/></th>
+		                    <th class="text14"><spring:message code="systema.efaktura.mainlist.label.henak.mott"/></th>
+		                    <th class="text14"><spring:message code="systema.efaktura.mainlist.label.hekdpl.prkd"/></th>
+		                    <th class="text14"><spring:message code="systema.efaktura.mainlist.label.hent.ant"/></th>
+		                    <th class="text14"><spring:message code="systema.efaktura.mainlist.label.hevkt.vkt"/></th>
+		                    <th class="text14"><spring:message code="systema.efaktura.mainlist.label.hem3.m3"/></th>
+		                    <th class="text14"><spring:message code="systema.efaktura.mainlist.label.helm.lm"/></th>
+		                    <th class="text14"><spring:message code="systema.efaktura.mainlist.label.xpdf.pdf"/></th>
+		                    <th class="text14"><spring:message code="systema.efaktura.mainlist.label.xkifs.xml"/></th>
 		                    <th class="text14">
 		                    	<img onMouseOver="showPop('status_info');" onMouseOut="hidePop('status_info');" width="12px" height="12px" src="resources/images/info3.png" border="0" alt="info">
 		                    	Status
