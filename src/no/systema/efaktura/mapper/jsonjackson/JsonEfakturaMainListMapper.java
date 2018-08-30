@@ -30,7 +30,8 @@ public class JsonEfakturaMainListMapper extends ObjectMapperAbstractGrandFather 
 		JsonEfakturaMainListContainer container = super.getObjectMapper().readValue(utfPayload.getBytes(), JsonEfakturaMainListContainer.class); 
 		logger.info("[JSON-String payload status=OK]  " + container.getUser());
 		for (JsonEfakturaMainListRecord record : container.getOrderList()){
-			//DEBUG
+			//logger.info(record.getXffn());
+			//logger.info(record.getXkifs());
 		}
 		return container;
 	}

@@ -23,6 +23,7 @@ public class EfakturaListServiceImpl implements EfakturaListService {
 		try{
 			JsonEfakturaMainListMapper mapper = new JsonEfakturaMainListMapper();
 			container = mapper.getContainer(utfPayload);
+			
 		}catch(Exception e){
 			e.printStackTrace();
 		}

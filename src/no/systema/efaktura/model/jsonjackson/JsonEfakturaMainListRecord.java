@@ -113,7 +113,7 @@ public class JsonEfakturaMainListRecord extends JsonAbstractGrandFatherRecord{
 	//xml-kvittering
 	private String xkifs = null;
 	public void setXkifs(String value) {  this.xkifs = value; }
-	public String getXkifs() {return this.xrifs;}
+	public String getXkifs() {return this.xkifs;}
 		
 	
 	/**

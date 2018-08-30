@@ -301,6 +301,7 @@ public class EfakturaMainListController {
     		JsonEfakturaMainListContainer listContainer = this.efakturaListService.getMainListContainer(jsonPayload);
     		outputList = listContainer.getOrderList();	
     		//maxWarningMap.put(EfakturaConstants.DOMAIN_MAX_WARNING_OPEN_ORDERS, jsonOpenOrdersListContainer.getMaxWarning());
+    		
     	}		
 	    
 		return outputList;
