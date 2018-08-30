@@ -159,7 +159,7 @@
 		                    <th class="text14">M3</th>
 		                    <th class="text14">LM</th>
 		                    <th class="text14">PDF</th>
-		                    <th class="text14">EDI</th>
+		                    <th class="text14">XML</th>
 		                    <th class="text14">
 		                    	<img onMouseOver="showPop('status_info');" onMouseOut="hidePop('status_info');" width="12px" height="12px" src="resources/images/info3.png" border="0" alt="info">
 		                    	Status
@@ -216,14 +216,21 @@
 			               <td align="center" class="text14MediumBlue" <c:if test="${record.xfst=='E'}">style="color:#D8000C;"</c:if> >&nbsp;${record.hevkt}</td>
 			               <td align="center" class="text14MediumBlue" <c:if test="${record.xfst=='E'}">style="color:#D8000C;"</c:if> >&nbsp;${record.hem3}</td>
 			               <td align="center" class="text14MediumBlue" <c:if test="${record.xfst=='E'}">style="color:#D8000C;"</c:if> >&nbsp;${record.helm}</td>
-			               <td align="center" class="text14MediumBlue" <c:if test="${record.xfst=='E'}">style="color:#D8000C;"</c:if> >&nbsp;
+			               <td align="center" class="text14MediumBlue" <c:if test="${record.xfst=='E'}">style="color:#D8000C;"</c:if> >
 			               		<c:if test="${ not empty record.xpdf }">
 							    	<a href="efaktura_mainlist_renderArchive.do?fp=${record.xpdf}" target="_new" >
-			               				<img title="${record.documentName}" src="resources/images/pdf.png" border="0" width="16px" height="16px" alt="Visa arkivdokument" >
+			               				<img title="${record.documentName}" src="resources/images/pdf2.png" border="0" width="20px" height="20px" alt="arkivdokument" >
 		               				</a>
 		            			</c:if>
 			               </td>
-			               <td align="center" class="text14MediumBlue" >&nbsp;${record.xkifs}</td>
+			               <td align="center" class="text14MediumBlue" <c:if test="${record.xfst=='E'}">style="color:#D8000C;"</c:if> >
+			               		<c:if test="${ not empty record.xkifs }">
+							    	<a href="efaktura_mainlist_renderArchive.do?fp=${record.xkifs}" target="_new" >
+			               				<img title="${record.documentName}" src="resources/images/xml.png" border="0" width="22px" height="22px" alt="xmldokument" >
+		               				</a>
+		            			</c:if>
+			               </td>
+			               		
 			               <td align="center" class="text14MediumBlue" <c:if test="${record.xfst=='E'}">style="color:#D8000C;"</c:if> >
 			               		<c:choose>
 				               		<c:when test="${record.xfst=='E' || record.xfst=='O' || record.xfst=='C' || record.xfst=='A' || record.xfst==' ' }">
@@ -242,10 +249,10 @@
 				               		</c:otherwise>
 			               		</c:choose>
 		               	   </td>
-		               	   <td align="center" class="text14MediumBlue" <c:if test="${record.xfst=='E'}">style="color:#D8000C;"</c:if> >&nbsp;
+		               	   <td align="center" class="text14MediumBlue" <c:if test="${record.xfst=='E'}">style="color:#D8000C;"</c:if> >
 			               		<c:if test="${ not empty record.xffn }">
 							    	<a href="efaktura_mainlist_resend.do?fn=${record.xffn}&st=">
-			               				<img title="resend faktnr:${record.xffn}" src="resources/images/send-file.png" border="0" width="16px" height="16px" alt="Resend file/invoice" >
+			               				<img title="resend faktnr:${record.xffn}" src="resources/images/send-file.png" border="0" width="20px" height="20px" alt="Resend file/invoice" >
 		               				</a>
 		            			</c:if>
 			               </td>
