@@ -31,6 +31,7 @@
 	  
 	jq('#logRecords').dataTable( {
 	  "jQueryUI": false,
+	  "searchHighlight": true,
 	  "dom": '<"top"lf>t<"bottom"ip><"clear">',
 	  "scrollY":     "700px",
   	  "scrollCollapse":  true,
