@@ -97,7 +97,7 @@
 			                       <tr class="text14" >
 			                   </c:otherwise>
 			               </c:choose>
-			               <td class="text14MediumBlue" id="kundnr_${record.kundnr}@navn_${record.navn}@counter_${counter.count}">&nbsp;${record.kundnr}</td>
+			               <td style="cursor:pointer;" class="text14MediumBlue" id="kundnr_${record.kundnr}@navn_${record.navn}@counter_${counter.count}">&nbsp;${record.kundnr}</td>
 			               <td class="text14">&nbsp;${record.navn}</td>
 			               <td class="text14">&nbsp;${record.adr1}</td>
 			               <td class="text14">&nbsp;${record.adresse}</td>
