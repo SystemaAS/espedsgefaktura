@@ -93,7 +93,29 @@
 					<td class="text14" title="rfa">&nbsp;<spring:message code="systema.efaktura.mainlist.label.herfa.agentref"/></td>
 					<td class="text14" title="from">&nbsp;<spring:message code="systema.efaktura.mainlist.label.hesdf.from"/></td>
 					<td class="text14" title="to">&nbsp;<spring:message code="systema.efaktura.mainlist.label.hesdt.to"/></td>
-					<td class="text14" title="status">&nbsp;<spring:message code="systema.efaktura.mainlist.label.xfst.status"/></td>
+					<td class="text14" title="status">
+						<img onMouseOver="showPop('status_info');" onMouseOut="hidePop('status_info');" width="12px" height="12px" src="resources/images/info3.png" border="0" alt="info">
+	                    	<spring:message code="systema.efaktura.mainlist.label.xfst.status"/>
+		                	<div class="text14" style="position: relative;" align="left">
+							<span style="display:block; position: absolute; top:0px; left:-150px; width:200px;" id="status_info" class="popupWithInputText"  >
+								<font class="text14" >
+			           		 	<p>Status</p>
+			           		 	<ul>
+			           		 		<li><b>blank</b>&nbsp;Ikke sendt</li>
+			           		 		<li><b>A</b>&nbsp;Annet.</li>
+			           				<li><b>C</b>&nbsp;Sendt: sendt til mottakspunkt.</li>
+			           				<li><b>E</b>&nbsp;Error: Fejl ved sending.</li>
+			           				<li><b>N</b>&nbsp;Warning: Faktura mangler fakturalinjer.</li>
+			           				<li><b>O</b>&nbsp;Received er OK.</li>
+			           				<li><b>S</b>&nbsp;Info: Faktura er kredittert.</li>
+			           				<li><b>T</b>&nbsp;Warning: PDF av faktura er ikke klar.</li>
+			           				<li><b>V</b>&nbsp;Warning: XML-faktura skal ikke sendes pga. partners standardmelding ikke er definert (pkt.5 på meny EDIMNU3).</li>
+			           				<li><b>X</b>&nbsp;Warning: midletidig status. Program holder på å lage xml-fil</li>
+				           		</ul>
+				           		</font>
+							</span>
+						</div>	
+					</td>
 					
 				</tr>
 				<tr>	
@@ -160,29 +182,7 @@
 		                    <th class="text14"><spring:message code="systema.efaktura.mainlist.label.helm.lm"/></th>
 		                    <th class="text14"><spring:message code="systema.efaktura.mainlist.label.xpdf.pdf"/></th>
 		                    <th class="text14"><spring:message code="systema.efaktura.mainlist.label.xkifs.xml"/></th>
-		                    <th class="text14">
-		                    	<img onMouseOver="showPop('status_info');" onMouseOut="hidePop('status_info');" width="12px" height="12px" src="resources/images/info3.png" border="0" alt="info">
-		                    	Status
-		                    	<div class="text14" style="position: relative;" align="left">
-									<span style="position: absolute; top:0px; left:-150px; width:200px;" id="status_info" class="popupWithInputText"  >
-										<font class="text14" >
-					           		 	<p>Status</p>
-					           		 	<ul>
-					           		 		<li><b>blank</b>&nbsp;Ikke sendt</li>
-					           		 		<li><b>A</b>&nbsp;Annet.</li>
-					           				<li><b>C</b>&nbsp;Sendt: sendt til mottakspunkt.</li>
-					           				<li><b>E</b>&nbsp;Error: Fejl ved sending.</li>
-					           				<li><b>N</b>&nbsp;Warning: Faktura mangler fakturalinjer.</li>
-					           				<li><b>O</b>&nbsp;Received er OK.</li>
-					           				<li><b>S</b>&nbsp;Info: Faktura er kredittert.</li>
-					           				<li><b>T</b>&nbsp;Warning: PDF av faktura er ikke klar.</li>
-					           				<li><b>V</b>&nbsp;Warning: XML-faktura skal ikke sendes pga. partners standardmelding ikke er definert (pkt.5 på meny EDIMNU3).</li>
-					           				<li><b>X</b>&nbsp;Warning: midletidig status. Program holder på å lage xml-fil</li>
-						           		</ul>
-						           		</font>
-									</span>
-								</div>	
-		                    </th>
+		                    <th class="text14"><spring:message code="systema.efaktura.mainlist.label.xfst.status"/></th>
 		                    <th class="text14">Send ny oppg.</th>
 		                </tr> 
 		                </thead>
