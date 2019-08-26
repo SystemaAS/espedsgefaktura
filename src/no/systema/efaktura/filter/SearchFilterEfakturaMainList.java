@@ -22,7 +22,7 @@ import no.systema.main.util.DateTimeManager;
  */
 public class SearchFilterEfakturaMainList {
 	private static final Logger logger = Logger.getLogger(SearchFilterEfakturaMainList.class.getName());
-	
+	private final int DEFAULT_DAYS_BACK = -3;
 	private String avd = null;
 	public void setAvd(String value) {  this.avd = value; }
 	public String getAvd() { return this.avd;}
@@ -45,7 +45,7 @@ public class SearchFilterEfakturaMainList {
 		if (this.from!=null){
 			//nothing
 		}else{
-			this.from = new DateTimeManager().getNewDateFromNow(-15);
+			this.from = new DateTimeManager().getNewDateFromNow(this.DEFAULT_DAYS_BACK);
 		}
 		return this.from;
 	}
