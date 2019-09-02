@@ -102,14 +102,14 @@
 			           		 	<p>Status</p>
 			           		 	<ul>
 			           		 		<li><b>blank</b>&nbsp;Ikke sendt</li>
-			           		 		<li><b>A</b>&nbsp;Annet.</li>
+			           		 		<li><b>A</b>&nbsp;Klar til å bli sendt</li>
 			           				<li><b>C</b>&nbsp;Sendt: sendt til mottakspunkt.</li>
+			           				<li><b>D</b>&nbsp;Slettet</li>
 			           				<li><b>E</b>&nbsp;Error: Fejl ved sending.</li>
 			           				<li><b>N</b>&nbsp;Warning: Faktura mangler fakturalinjer.</li>
 			           				<li><b>O</b>&nbsp;Received er OK.</li>
 			           				<li><b>S</b>&nbsp;Info: Faktura er kredittert.</li>
 			           				<li><b>T</b>&nbsp;Warning: PDF av faktura er ikke klar.</li>
-			           				<li><b>V</b>&nbsp;Warning: XML-faktura skal ikke sendes pga. partners standardmelding ikke er definert (pkt.5 på meny EDIMNU3).</li>
 			           				<li><b>X</b>&nbsp;Warning: midletidig status. Program holder på å lage xml-fil</li>
 				           		</ul>
 				           		</font>
@@ -143,9 +143,10 @@
            					<option value="*" <c:if test="${searchFilter.status == '*'}"> selected </c:if> >Alle</option>
           					<option value="O" <c:if test="${searchFilter.status == 'O'}"> selected </c:if> >Received</option>
           					<option value="C" <c:if test="${searchFilter.status == 'C'}"> selected </c:if> >Sendt</option>
+          					<option value="D" <c:if test="${searchFilter.status == 'D'}"> selected </c:if> >Slettet</option>
           					<option value=" "  <c:if test="${searchFilter.status == ' '}"> selected </c:if> >Ikke sendt</option>
           					<option value="E" <c:if test="${searchFilter.status == 'E'}"> selected </c:if> >Error</option>
-          					<option value="A" <c:if test="${searchFilter.status == 'A'}"> selected </c:if> >Annet</option>
+          					<option value="A" <c:if test="${searchFilter.status == 'A'}"> selected </c:if> >Klar til å bli sendt</option>
           					
           				</select>
 			        </td>
@@ -184,6 +185,7 @@
 		                    <th class="text14"><spring:message code="systema.efaktura.mainlist.label.xkifs.xml"/></th>
 		                    <th class="text14"><spring:message code="systema.efaktura.mainlist.label.xfst.status"/></th>
 		                    <th class="text14">Send ny oppg.</th>
+		                    <th class="text14">Slett</th>
 		                </tr> 
 		                </thead>
 		                
@@ -233,16 +235,14 @@
 			               		
 			               <td align="center" class="text14MediumBlue" <c:if test="${record.xfst=='E'}">style="color:#D8000C;"</c:if> >
 			               		<c:choose>
-				               		<c:when test="${record.xfst=='E' || record.xfst=='O' || record.xfst=='C' || record.xfst=='A' || record.xfst==' ' }">
-				               			<c:if test="${record.xfst=='E'}">
-					               			<img title="error" id="errorImg" onMouseOver="showPop('errorMessage_${counter.count}');" onMouseOut="hidePop('errorMessage_${counter.count}');" style="vertical-align:bottom;" width="16px" height="16px" src="resources/images/redFlag.png" border="0" alt="info">
-								 			<b>Error</b>
-					               			<div class="text14" style="position: relative;" align="left">
-												<span style="position: absolute; top:0px; left:-100px;" id="errorMessage_${counter.count}" class="popupWithInputText"  >
-									           		<font class="text14" >Error text here...</font>
-												</span>
-											</div>
-										</c:if>
+				               		<c:when test="${record.xfst=='E'}">
+				               			<img title="error" id="errorImg" onMouseOver="showPop('errorMessage_${counter.count}');" onMouseOut="hidePop('errorMessage_${counter.count}');" style="vertical-align:bottom;" width="16px" height="16px" src="resources/images/redFlag.png" border="0" alt="info">
+							 			<b>Error</b>
+				               			<div class="text14" style="position: relative;" align="left">
+											<span style="position: absolute; top:0px; left:-100px;" id="errorMessage_${counter.count}" class="popupWithInputText"  >
+								           		<font class="text14" >Error text here...</font>
+											</span>
+										</div>
 				               		</c:when>
 				               		<c:otherwise>
 										${record.xfst}
@@ -252,12 +252,21 @@
 		               	   <td align="center" class="text14MediumBlue" <c:if test="${record.xfst=='E'}">style="color:#D8000C;"</c:if> >
 			               		<c:if test="${ not empty record.xffn }">
 							    	<a href="efaktura_mainlist_resend.do?fn=${record.xffn}&st=">
-			               				<img title="resend faktnr:${record.xffn}" src="resources/images/send-file.png" border="0" width="20px" height="20px" alt="Resend file/invoice" >
-		               				</a>
-		            			</c:if>
+		               				<img title="resend faktnr:${record.xffn}" src="resources/images/send-file.png" border="0" width="20px" height="20px" alt="Resend file/invoice" >
+	               				</a>
+		            				</c:if>
 			               </td>
-		               	   
-		               	   </div>
+			               
+			               <td align="center" class="text14MediumBlue" <c:if test="${record.xfst=='E'}">style="color:#D8000C;"</c:if> >
+			               		<c:if test="${ not empty record.xffn }">
+				               		<c:if test="${ record.xfst =='A' || record.xfst==' ' }">
+									    	<a href="efaktura_mainlist_delete_invoice.do?fn=${record.xffn}">
+				               				<img title="remove faktnr:${record.xffn}" src="resources/images/delete.gif" border="0" alt="remove">
+			               				</a>
+		               				</c:if>
+		            				</c:if>
+			               </td>
+			               		               	   
 			            </tr> 
 			            </c:forEach>
 			            </tbody>

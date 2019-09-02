@@ -45,7 +45,7 @@ public class SearchFilterEfakturaMainList {
 		if (this.from!=null){
 			//nothing
 		}else{
-			this.from = new DateTimeManager().getNewDateFromNow(this.DEFAULT_DAYS_BACK);
+			//YBC - takes care for default -->this.from = new DateTimeManager().getNewDateFromNow(this.DEFAULT_DAYS_BACK);
 		}
 		return this.from;
 	}

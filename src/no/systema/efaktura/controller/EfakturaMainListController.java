@@ -261,6 +261,50 @@ public class EfakturaMainListController {
 		}
 	}		
 	
+	
+	@RequestMapping(value="efaktura_mainlist_delete_invoice.do",  method={RequestMethod.GET, RequestMethod.POST} )
+	public ModelAndView doDelete(HttpSession session, HttpServletRequest request){
+		this.context = TdsAppContext.getApplicationContext();
+		Map model = new HashMap();
+		logger.info("Inside: doResend");
+		ModelAndView successView = new ModelAndView("redirect:efaktura_mainlist.do?action=doFind&rd=1");
+		
+		SystemaWebUser appUser = this.loginValidator.getValidUser(session);
+		String invoiceNr = request.getParameter("fn");
+		String status = "D";
+		
+		//check user (should be in session already)
+		if(appUser==null){
+			return loginView;
+		
+		}else{
+			//appUser.setActiveMenu(SystemaWebUser.ACTIVE_MENU_EFAKTURA);
+			logger.info(Calendar.getInstance().getTime() + " CONTROLLER start - timestamp");
+			String BASE_URL = EfakturaUrlDataStore.EFAKTURA_BASE_MAIN_LOG_LIST_RESEND_INVOICE_URL;
+			//add URL-parameters
+			StringBuffer urlRequestParams = new StringBuffer();
+			urlRequestParams.append("user=" + appUser.getUser());
+			urlRequestParams.append("&fn=" + invoiceNr);
+			urlRequestParams.append("&st=");
+			
+			//session.setAttribute(TransportDispConstants.ACTIVE_URL_RPG_TRANSPORT_DISP, BASE_URL + "==>params: " + urlRequestParams.toString()); 
+	    	logger.info(Calendar.getInstance().getTime() + " CGI-start timestamp");
+	    	logger.info("URL: " + BASE_URL);
+	    	logger.info("URL PARAMS: " + urlRequestParams);
+	    	String jsonPayload = this.urlCgiProxyService.getJsonContent(BASE_URL, urlRequestParams.toString());
+	    	//Debug --> 
+	    	logger.debug(jsonDebugger.debugJsonPayloadWithLog4J(jsonPayload));
+	    	logger.info(Calendar.getInstance().getTime() +  " CGI-end timestamp");
+	    	if(jsonPayload!=null){
+	    		//Do something
+	    	}		
+			
+    		logger.info(Calendar.getInstance().getTime() + " CONTROLLER end - timestamp");
+    		return successView;
+		    
+		}
+	}		
+	
 	/**
 	 * 
 	 * @param appUser
