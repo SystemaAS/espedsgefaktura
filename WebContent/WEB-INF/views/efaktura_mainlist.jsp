@@ -185,7 +185,7 @@
 		                    <th class="text14"><spring:message code="systema.efaktura.mainlist.label.xkifs.xml"/></th>
 		                    <th class="text14"><spring:message code="systema.efaktura.mainlist.label.xfst.status"/></th>
 		                    <th class="text14">Send ny oppg.</th>
-		                    <th class="text14">Slett</th>
+		                    <th title="Bare status A eller blankt ..."class="text14">Slett</th>
 		                </tr> 
 		                </thead>
 		                
@@ -251,7 +251,7 @@
 		               	   </td>
 		               	   <td align="center" class="text14MediumBlue" <c:if test="${record.xfst=='E'}">style="color:#D8000C;"</c:if> >
 			               		<c:if test="${ not empty record.xffn }">
-							    	<a href="efaktura_mainlist_resend.do?fn=${record.xffn}&st=">
+							    	<a OnClick="setBlockUI();" href="efaktura_mainlist_resend.do?fn=${record.xffn}&st=">
 		               				<img title="resend faktnr:${record.xffn}" src="resources/images/send-file.png" border="0" width="20px" height="20px" alt="Resend file/invoice" >
 	               				</a>
 		            				</c:if>
@@ -259,9 +259,9 @@
 			               
 			               <td align="center" class="text14MediumBlue" <c:if test="${record.xfst=='E'}">style="color:#D8000C;"</c:if> >
 			               		<c:if test="${ not empty record.xffn }">
-				               		<c:if test="${ record.xfst =='A' || record.xfst==' ' }">
-									    	<a href="efaktura_mainlist_delete_invoice.do?fn=${record.xffn}">
-				               				<img title="remove faktnr:${record.xffn}" src="resources/images/delete.gif" border="0" alt="remove">
+				               		<c:if test="${ record.xfst =='A' || record.xfst==' ' || empty record.xfst }">
+									    	<a OnClick="setBlockUI();" href="efaktura_mainlist_delete_invoice.do?fn=${record.xffn}">
+				               				<img title="Slett faktnr:${record.xffn}" src="resources/images/delete.gif" border="0" alt="remove">
 			               				</a>
 		               				</c:if>
 		            				</c:if>

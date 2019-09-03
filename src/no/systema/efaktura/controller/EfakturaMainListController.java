@@ -271,7 +271,7 @@ public class EfakturaMainListController {
 		
 		SystemaWebUser appUser = this.loginValidator.getValidUser(session);
 		String invoiceNr = request.getParameter("fn");
-		String status = "D";
+		String DELETE_STATUS = "D";
 		
 		//check user (should be in session already)
 		if(appUser==null){
@@ -285,7 +285,7 @@ public class EfakturaMainListController {
 			StringBuffer urlRequestParams = new StringBuffer();
 			urlRequestParams.append("user=" + appUser.getUser());
 			urlRequestParams.append("&fn=" + invoiceNr);
-			urlRequestParams.append("&st=");
+			urlRequestParams.append("&st=" + DELETE_STATUS);
 			
 			//session.setAttribute(TransportDispConstants.ACTIVE_URL_RPG_TRANSPORT_DISP, BASE_URL + "==>params: " + urlRequestParams.toString()); 
 	    	logger.info(Calendar.getInstance().getTime() + " CGI-start timestamp");
