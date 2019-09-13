@@ -167,22 +167,22 @@
 					<table id="logRecords" class="display compact cell-border" width="100%" cellspacing="0">
 						<thead>
 						<tr class="tableHeaderField">
-							<th class="text14"><spring:message code="systema.efaktura.mainlist.label.avd"/>/<spring:message code="systema.efaktura.mainlist.label.opd"/></th>   
-		                    <th class="text14"><spring:message code="systema.efaktura.mainlist.label.xffn.faktnr"/></th>
+							<th class="text14"><spring:message code="systema.efaktura.mainlist.label.xffn.faktnr"/></th>
 		                    <th class="text14"><spring:message code="systema.efaktura.mainlist.label.xfkn.kundenr"/></th>
 		                    <th class="text14"><spring:message code="systema.efaktura.mainlist.label.herfa.agentref"/></th>
+		                    <th class="text14"><spring:message code="systema.efaktura.mainlist.label.avd"/>/<spring:message code="systema.efaktura.mainlist.label.opd"/></th>   
 		                    <th class="text14"><spring:message code="systema.efaktura.mainlist.label.hedtop.date"/></th>
 		                    <th class="text14"><spring:message code="systema.efaktura.mainlist.label.hesdf.from"/></th>
 		                    <th class="text14"><spring:message code="systema.efaktura.mainlist.label.hesdt.to"/></th>
 		                    <th class="text14"><spring:message code="systema.efaktura.mainlist.label.henas.avs"/></th>
 		                    <th class="text14"><spring:message code="systema.efaktura.mainlist.label.henak.mott"/></th>
-		                    <th class="text14"><spring:message code="systema.efaktura.mainlist.label.hekdpl.prkd"/></th>
-		                    <th class="text14"><spring:message code="systema.efaktura.mainlist.label.hent.ant"/></th>
-		                    <th class="text14"><spring:message code="systema.efaktura.mainlist.label.hevkt.vkt"/></th>
+		                    <th title="Produktkode" class="text14"><spring:message code="systema.efaktura.mainlist.label.hekdpl.prkd"/></th>
+		                    <th title="Antall" class="text14"><spring:message code="systema.efaktura.mainlist.label.hent.ant"/></th>
+		                    <th title="Vekt" class="text14"><spring:message code="systema.efaktura.mainlist.label.hevkt.vkt"/></th>
 		                    <th class="text14"><spring:message code="systema.efaktura.mainlist.label.hem3.m3"/></th>
 		                    <th class="text14"><spring:message code="systema.efaktura.mainlist.label.helm.lm"/></th>
-		                    <th class="text14"><spring:message code="systema.efaktura.mainlist.label.xpdf.pdf"/></th>
-		                    <th class="text14"><spring:message code="systema.efaktura.mainlist.label.xkifs.xml"/></th>
+		                    <th title="PDF-fil" class="text14"><spring:message code="systema.efaktura.mainlist.label.xpdf.pdf"/></th>
+		                    <th title="Faktura-fil (XML, text, csv)" class="text14"><spring:message code="systema.efaktura.mainlist.label.xkifs.xml"/></th>
 		                    <th class="text14"><spring:message code="systema.efaktura.mainlist.label.xfst.status"/></th>
 		                    <th class="text14">Send ny oppg.</th>
 		                    <th title="Bare status A eller blankt ..."class="text14">Slett</th>
@@ -204,10 +204,10 @@
 			                       <tr class="tex11">
 			                   </c:otherwise>
 			               </c:choose>
-			               <td class="text14MediumBlue" <c:if test="${record.xfst=='E'}">style="color:#D8000C;"</c:if> >&nbsp;${record.avd}/${record.opd}</td>
 			               <td class="text14MediumBlue" <c:if test="${record.xfst=='E'}">style="color:#D8000C;"</c:if> >&nbsp;${record.xffn}</td>
 			               <td class="text14MediumBlue" <c:if test="${record.xfst=='E'}">style="color:#D8000C;"</c:if> >&nbsp;${record.xfkn}</td>
 			               <td class="text14MediumBlue" <c:if test="${record.xfst=='E'}">style="color:#D8000C;"</c:if> >&nbsp;${record.herfa}</td>
+			               <td class="text14MediumBlue" <c:if test="${record.xfst=='E'}">style="color:#D8000C;"</c:if> >&nbsp;${record.avd}/${record.opd}</td>
 			               <td class="text14MediumBlue" <c:if test="${record.xfst=='E'}">style="color:#D8000C;"</c:if> >&nbsp;${record.hedtop}</td>
 			               <td class="text14MediumBlue" <c:if test="${record.xfst=='E'}">style="color:#D8000C;"</c:if> >&nbsp;${record.hesdf}</td>
 			               <td class="text14MediumBlue" <c:if test="${record.xfst=='E'}">style="color:#D8000C;"</c:if> >&nbsp;${record.hesdt}</td>
