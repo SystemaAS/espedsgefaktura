@@ -39,6 +39,7 @@ public class JsonEfakturaMainListRecord extends JsonAbstractGrandFatherRecord{
 	public void setFadato(String value) {  this.fadato = value; }
 	public String getFadato() {return this.fadato;}
 	
+	
 	private String hesdf = null;
 	public void setHesdf(String value) {  this.hesdf = value; }
 	public String getHesdf() {return this.hesdf;}

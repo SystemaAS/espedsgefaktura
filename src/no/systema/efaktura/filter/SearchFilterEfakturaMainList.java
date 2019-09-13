@@ -54,6 +54,12 @@ public class SearchFilterEfakturaMainList {
 	public void setTo(String value) {  this.to = value; }
 	public String getTo() { return this.to;}
 	
+	
+	private String ownOrderDateFlag = null;
+	public void setOwnOrderDateFlag(String value) {  this.ownOrderDateFlag = value; }
+	public String getOwnOrderDateFlag() {return this.ownOrderDateFlag;}
+	
+	
 	private String status = null;
 	public void setStatus(String value) {  this.status = value; }
 	public String getStatus() { return this.status;}

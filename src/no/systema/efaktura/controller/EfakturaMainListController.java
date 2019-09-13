@@ -85,6 +85,7 @@ public class EfakturaMainListController {
 		this.context = TdsAppContext.getApplicationContext();
 		Collection logList = new ArrayList();
 		logger.info("Inside: doFind");
+		logger.info("Flag:" + recordToValidate.getOwnOrderDateFlag());
 		Map model = new HashMap();
 		
 		ModelAndView successView = new ModelAndView("efaktura_mainlist");
@@ -324,8 +325,17 @@ public class EfakturaMainListController {
 		if(!"".equals(recordToValidate.getFaktnr())&& recordToValidate.getFaktnr()!=null ){ urlRequestParams.append("&fn=" + recordToValidate.getFaktnr()); }
 		if(!"".equals(recordToValidate.getKundenr())&& recordToValidate.getKundenr()!=null ){ urlRequestParams.append("&fkn=" + recordToValidate.getKundenr()); }
 		if(!"".equals(recordToValidate.getRfa())&& recordToValidate.getRfa()!=null ){ urlRequestParams.append("&rfa=" + recordToValidate.getRfa()); }
-		if(!"".equals(recordToValidate.getFrom())&& recordToValidate.getFrom()!=null ){ urlRequestParams.append("&dtf=" + recordToValidate.getFrom()); }
-		if(!"".equals(recordToValidate.getTo())&& recordToValidate.getTo()!=null ){ urlRequestParams.append("&dtt=" + recordToValidate.getTo()); }
+		
+		if(!"".equals(recordToValidate.getOwnOrderDateFlag())&& recordToValidate.getOwnOrderDateFlag()!=null ){ 
+			if(!"".equals(recordToValidate.getFrom())&& recordToValidate.getFrom()!=null ){ urlRequestParams.append("&dtf_todo=" + recordToValidate.getFrom()); }
+			if(!"".equals(recordToValidate.getTo())&& recordToValidate.getTo()!=null ){ urlRequestParams.append("&dtt_todo=" + recordToValidate.getTo()); }
+		}else{
+			//faktura datum
+			if(!"".equals(recordToValidate.getFrom())&& recordToValidate.getFrom()!=null ){ urlRequestParams.append("&dtf=" + recordToValidate.getFrom()); }
+			if(!"".equals(recordToValidate.getTo())&& recordToValidate.getTo()!=null ){ urlRequestParams.append("&dtt=" + recordToValidate.getTo()); }
+			
+		}
+		
 		if(!"".equals(recordToValidate.getStatus())&& recordToValidate.getStatus()!=null ){ 
 			urlRequestParams.append("&st=" + recordToValidate.getStatus());
 		}else{

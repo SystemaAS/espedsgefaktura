@@ -91,8 +91,8 @@
 						</a>
 					</td>
 					<td class="text14" title="rfa">&nbsp;<spring:message code="systema.efaktura.mainlist.label.herfa.agentref"/></td>
-					<td class="text14" title="from">&nbsp;<spring:message code="systema.efaktura.mainlist.label.hesdf.from"/></td>
-					<td class="text14" title="to">&nbsp;<spring:message code="systema.efaktura.mainlist.label.hesdt.to"/></td>
+					<td title="Fakturadato fra" class="text14" title="from">&nbsp;<spring:message code="systema.efaktura.mainlist.label.hesdf.from"/></td>
+					<td title="Fakturadato til" class="text14" title="to">&nbsp;<spring:message code="systema.efaktura.mainlist.label.hesdt.to"/></td>
 					<td class="text14" title="status">
 						<img onMouseOver="showPop('status_info');" onMouseOut="hidePop('status_info');" width="12px" height="12px" src="resources/images/info3.png" border="0" alt="info">
 	                    	<spring:message code="systema.efaktura.mainlist.label.xfst.status"/>
@@ -137,7 +137,9 @@
 		        	</td>
 		        	<td class="text14">
 			        	<input type="text" class="inputText" name="to" id="to" size="9" maxlength="8" value='${searchFilter.to}'>
-			        </td>
+			        	<input style="cursor:pointer" title="Ordredato" type="checkbox" <c:if test="${not empty searchFilter.ownOrderDateFlag }"> checked </c:if> name="ownOrderDateFlag" id="ownOrderDateFlag" value='1'>
+			        	
+			     </td>
 			        <td class="text14">
 			        	<select class="selectMediumBlueE2" name="status" id="status">
            					<option value="*" <c:if test="${searchFilter.status == '*'}"> selected </c:if> >Alle</option>
@@ -168,6 +170,7 @@
 						<thead>
 						<tr class="tableHeaderField">
 							<th class="text14"><spring:message code="systema.efaktura.mainlist.label.xffn.faktnr"/></th>
+		                    <th class="text14"><spring:message code="systema.efaktura.mainlist.label.fadato.faktdato"/></th>
 		                    <th class="text14"><spring:message code="systema.efaktura.mainlist.label.xfkn.kundenr"/></th>
 		                    <th class="text14"><spring:message code="systema.efaktura.mainlist.label.herfa.agentref"/></th>
 		                    <th class="text14"><spring:message code="systema.efaktura.mainlist.label.avd"/>/<spring:message code="systema.efaktura.mainlist.label.opd"/></th>   
@@ -205,6 +208,7 @@
 			                   </c:otherwise>
 			               </c:choose>
 			               <td class="text14MediumBlue" <c:if test="${record.xfst=='E'}">style="color:#D8000C;"</c:if> >&nbsp;${record.xffn}</td>
+			               <td class="text14MediumBlue" <c:if test="${record.xfst=='E'}">style="color:#D8000C;"</c:if> >&nbsp;${record.fadato}</td>
 			               <td class="text14MediumBlue" <c:if test="${record.xfst=='E'}">style="color:#D8000C;"</c:if> >&nbsp;${record.xfkn}</td>
 			               <td class="text14MediumBlue" <c:if test="${record.xfst=='E'}">style="color:#D8000C;"</c:if> >&nbsp;${record.herfa}</td>
 			               <td class="text14MediumBlue" <c:if test="${record.xfst=='E'}">style="color:#D8000C;"</c:if> >&nbsp;${record.avd}/${record.opd}</td>
