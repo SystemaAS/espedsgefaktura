@@ -133,12 +133,11 @@
 			        	<input type="text" class="inputText" name="rfa" id="rfa" size="15" maxlength="15" value='${searchFilter.rfa}'>
 		        	</td>
 		        	<td class="text14">
-			        	<input type="text" class="inputText" name="from" id="from" size="9" maxlength="8" value='${searchFilter.from}'>
+			        	<input autocomplete="off" type="text" class="inputText" name="from" id="from" size="9" maxlength="8" value='${searchFilter.from}'>
 		        	</td>
 		        	<td class="text14">
-			        	<input type="text" class="inputText" name="to" id="to" size="9" maxlength="8" value='${searchFilter.to}'>
-			        	<input style="cursor:pointer" title="Ordredato" type="checkbox" <c:if test="${not empty searchFilter.ownOrderDateFlag }"> checked </c:if> name="ownOrderDateFlag" id="ownOrderDateFlag" value='1'>
-			        	
+			        	<input autocomplete="off" type="text" class="inputText" name="to" id="to" size="9" maxlength="8" value='${searchFilter.to}'>
+			        	<input style="cursor:pointer" title="Fra/Til ordredato" type="checkbox" <c:if test="${not empty searchFilter.ownOrderDateFlag }"> checked </c:if> name="ownOrderDateFlag" id="ownOrderDateFlag" value='1'>
 			     </td>
 			        <td class="text14">
 			        	<select class="selectMediumBlueE2" name="status" id="status">

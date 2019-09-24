@@ -327,8 +327,8 @@ public class EfakturaMainListController {
 		if(!"".equals(recordToValidate.getRfa())&& recordToValidate.getRfa()!=null ){ urlRequestParams.append("&rfa=" + recordToValidate.getRfa()); }
 		
 		if(!"".equals(recordToValidate.getOwnOrderDateFlag())&& recordToValidate.getOwnOrderDateFlag()!=null ){ 
-			if(!"".equals(recordToValidate.getFrom())&& recordToValidate.getFrom()!=null ){ urlRequestParams.append("&dtf_todo=" + recordToValidate.getFrom()); }
-			if(!"".equals(recordToValidate.getTo())&& recordToValidate.getTo()!=null ){ urlRequestParams.append("&dtt_todo=" + recordToValidate.getTo()); }
+			if(!"".equals(recordToValidate.getFrom())&& recordToValidate.getFrom()!=null ){ urlRequestParams.append("&dtf_op=" + recordToValidate.getFrom()); }
+			if(!"".equals(recordToValidate.getTo())&& recordToValidate.getTo()!=null ){ urlRequestParams.append("&dtt_op=" + recordToValidate.getTo()); }
 		}else{
 			//faktura datum
 			if(!"".equals(recordToValidate.getFrom())&& recordToValidate.getFrom()!=null ){ urlRequestParams.append("&dtf=" + recordToValidate.getFrom()); }
