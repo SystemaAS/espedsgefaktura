@@ -174,8 +174,8 @@
 		                    <th class="text14"><spring:message code="systema.efaktura.mainlist.label.herfa.agentref"/></th>
 		                    <th class="text14"><spring:message code="systema.efaktura.mainlist.label.avd"/>/<spring:message code="systema.efaktura.mainlist.label.opd"/></th>   
 		                    <th class="text14"><spring:message code="systema.efaktura.mainlist.label.hedtop.date"/></th>
-		                    <th class="text14"><spring:message code="systema.efaktura.mainlist.label.hesdf.from"/></th>
-		                    <th class="text14"><spring:message code="systema.efaktura.mainlist.label.hesdt.to"/></th>
+		                    <th class="text14"><spring:message code="systema.efaktura.mainlist.label.hesdf.from.column"/></th>
+		                    <th class="text14"><spring:message code="systema.efaktura.mainlist.label.hesdt.to.column"/></th>
 		                    <th class="text14"><spring:message code="systema.efaktura.mainlist.label.henas.avs"/></th>
 		                    <th class="text14"><spring:message code="systema.efaktura.mainlist.label.henak.mott"/></th>
 		                    <th title="Produktkode" class="text14"><spring:message code="systema.efaktura.mainlist.label.hekdpl.prkd"/></th>
