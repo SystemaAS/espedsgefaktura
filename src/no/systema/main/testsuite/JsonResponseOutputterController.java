@@ -45,7 +45,7 @@ public class JsonResponseOutputterController {
 	
 	/**
 	 * Test call 
-	 * http://localhost:8080/espedsgtvinnsad/sytsuite.do?user=OSCAR
+	 * http://localhost:8080/espedsgefaktura/sytsuite.do?user=OSCAR
 	 * @return
 	 */
 	@RequestMapping(value="sytsuite.do", method={RequestMethod.GET, RequestMethod.POST})
