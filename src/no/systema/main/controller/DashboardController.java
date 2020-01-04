@@ -35,7 +35,7 @@ import org.springframework.validation.BindingResult;
 
 //import no.systema.tds.service.MainHdTopicService;
 import no.systema.main.validator.UserValidator;
-
+import no.systema.main.cookie.SessionCookieManager;
 //application imports
 import no.systema.main.model.SystemaWebUser;
 import no.systema.main.model.jsonjackson.JsonSystemaUserContainer;
@@ -96,6 +96,19 @@ public class DashboardController {
 		ModelAndView successView = new ModelAndView("redirect:efaktura_mainlist.do?action=doFind");
 		Map model = new HashMap();
 		
+		SessionCookieManager cookieMgr = new SessionCookieManager();
+		
+		//Init cookie token since this page is excluded in the interceptor
+		cookieMgr.removeLocalCookie(response);
+		
+		//Encrypt user credentials as late as possible
+		appUser.setEncryptedUser(appUser.getUser());
+		appUser.setUser(this.aesManager.decrypt(appUser.getUser()));
+		appUser.setEncryptedPassword(appUser.getPassword());
+    	appUser.setPassword(this.aesManager.decrypt(appUser.getPassword()));
+		appUser.setEncryptedToken(this.aesManager.encrypt(request.getSession().getId() + "&" + appUser.getUser()));
+    	
+		
 		if(appUser==null){
 			return this.loginView;
 		
@@ -118,13 +131,6 @@ public class DashboardController {
 		    	return loginView;
 	
 		    }else{
-		    	//Decrypt password to be able to work with it. 
-		    	//All sub-modules will be passed an encrypted password (from the dashboard). ALWAYS!
-		    	appUser.setEncryptedUser(appUser.getUser());
-		    	appUser.setUser(this.aesManager.decrypt(appUser.getUser()));
-		    	appUser.setEncryptedPassword(appUser.getPassword());
-		    	appUser.setPassword(this.aesManager.decrypt(appUser.getPassword()));
-		    	//logger.info("DECRYPT...:" + appUser.getPassword());
 		    	
 		    	//get the company code for the comming user
 		    	//this routine was triggered by Totens upgrade (Jan-2017 V12). Ref. JOVOs requirement
@@ -183,6 +189,8 @@ public class DashboardController {
 	    					return loginView;
 				    	}
 				    	
+				    	//create cookie for security token
+				    	cookieMgr.addLocalCookieToken( appUser.getEncryptedToken(), response);
 				    	session.setAttribute(AppConstants.SYSTEMA_WEB_USER_KEY, appUser);
 				    	
 			    	}catch(Exception e){
@@ -413,6 +421,7 @@ public class DashboardController {
 		
 		appUser.setUser(jsonSystemaUserContainer.getUser().toUpperCase());
 		appUser.setUserName(jsonSystemaUserContainer.getUserName());
+		appUser.setKundeL1(jsonSystemaUserContainer.getKundeL1());
 		appUser.setCompanyCode(companyCode);//fifirm in firm
 		appUser.setFallbackCompanyCode(this.getCompanyCodeForLogin()); //as a fallback needed in espedsg use cases
 		appUser.setUsrLang(jsonSystemaUserContainer.getUsrLang());
