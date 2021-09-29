@@ -262,7 +262,7 @@
 			               
 			               <td align="center" class="text14MediumBlue" <c:if test="${record.xfst=='E'}">style="color:#D8000C;"</c:if> >
 			               		<c:if test="${ not empty record.xffn }">
-				               		<c:if test="${ record.xfst =='A' || record.xfst==' ' || empty record.xfst }">
+				               		<c:if test="${ record.xfst =='A' || record.xfst==' ' || empty record.xfst || record.xfst =='E' }">
 									    	<a OnClick="setBlockUI();" href="efaktura_mainlist_delete_invoice.do?fn=${record.xffn}">
 				               				<img title="Slett faktnr:${record.xffn}" src="resources/images/delete.gif" border="0" alt="remove">
 			               				</a>
