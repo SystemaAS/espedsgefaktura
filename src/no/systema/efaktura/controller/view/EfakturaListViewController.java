@@ -2,7 +2,7 @@ package no.systema.efaktura.controller.view;
 
 import java.util.*;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -34,7 +34,7 @@ import no.systema.efaktura.util.EfakturaConstants;
 
 @Controller
 public class EfakturaListViewController {
-	private static final Logger logger = Logger.getLogger(EfakturaListViewController.class.getName());
+	private static final Logger logger = LogManager.getLogger(EfakturaListViewController.class.getName());
 	private ModelAndView loginView = new ModelAndView("redirect:logout.do");
 	
 	/**

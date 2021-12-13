@@ -5,8 +5,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.util.*;
 
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.*;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
@@ -64,7 +63,7 @@ import no.systema.efaktura.url.store.EfakturaUrlDataStore;
 @Scope("session")
 public class EfakturaChildWindowController {
 	
-	private static final Logger logger = Logger.getLogger(EfakturaChildWindowController.class.getName());
+	private static final Logger logger = LogManager.getLogger(EfakturaChildWindowController.class.getName());
 	private static final JsonDebugger jsonDebugger = new JsonDebugger(2000);
 	private DateTimeManager dateTimeManager = new DateTimeManager();
 	
@@ -83,7 +82,7 @@ public class EfakturaChildWindowController {
 	@PostConstruct
 	public void initIt() throws Exception {
 		if("DEBUG".equals(AppConstants.LOG4J_LOGGER_LEVEL)){
-			logger.setLevel(Level.DEBUG);
+			
 		}
 	}
 	
