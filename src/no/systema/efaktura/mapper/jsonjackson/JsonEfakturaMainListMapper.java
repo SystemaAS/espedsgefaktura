@@ -4,7 +4,7 @@
 package no.systema.efaktura.mapper.jsonjackson;
 
 //jackson library
-import org.apache.logging.log4j.*;
+import org.slf4j.*;
 
 //application library
 import no.systema.efaktura.model.jsonjackson.JsonEfakturaMainListContainer;
@@ -18,7 +18,7 @@ import no.systema.main.mapper.jsonjackson.general.ObjectMapperAbstractGrandFathe
  * 
  */
 public class JsonEfakturaMainListMapper extends ObjectMapperAbstractGrandFather {
-	private static final Logger logger = LogManager.getLogger(JsonEfakturaMainListMapper.class.getName());
+	private static final Logger logger = LoggerFactory.getLogger(JsonEfakturaMainListMapper.class.getName());
 	/**
 	 * 
 	 * @param utfPayload

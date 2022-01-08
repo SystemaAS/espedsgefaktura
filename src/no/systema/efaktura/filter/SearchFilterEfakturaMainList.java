@@ -6,7 +6,7 @@ package no.systema.efaktura.filter;
 import java.lang.reflect.Field;
 import java.util.*;
 
-import org.apache.logging.log4j.*;
+import org.slf4j.*;
 
 import no.systema.main.util.DateTimeManager;
 
@@ -21,7 +21,7 @@ import no.systema.main.util.DateTimeManager;
  * 
  */
 public class SearchFilterEfakturaMainList {
-	private static final Logger logger = LogManager.getLogger(SearchFilterEfakturaMainList.class.getName());
+	private static final Logger logger = LoggerFactory.getLogger(SearchFilterEfakturaMainList.class.getName());
 	private final int DEFAULT_DAYS_BACK = -3;
 	private String avd = null;
 	public void setAvd(String value) {  this.avd = value; }

@@ -6,7 +6,7 @@ import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
 
-import org.apache.logging.log4j.*;
+import org.slf4j.*;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.stereotype.Controller;
@@ -58,7 +58,7 @@ import no.systema.efaktura.util.RpgReturnResponseHandler;
 @Scope("session")
 public class EfakturaMainListController {
 	private static final JsonDebugger jsonDebugger = new JsonDebugger(3000);
-	private static Logger logger = LogManager.getLogger(EfakturaMainListController.class.getName());
+	private static Logger logger = LoggerFactory.getLogger(EfakturaMainListController.class.getName());
 	private ModelAndView loginView = new ModelAndView("redirect:logout.do");
 	private ApplicationContext context;
 	private LoginValidator loginValidator = new LoginValidator();
